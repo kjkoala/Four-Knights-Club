@@ -188,7 +188,7 @@ button:disabled {
 }
 
 .track::after {
-  content: attr(data-text) " " attr(data-text) " " attr(data-text);
+  content: attr(data-text) " " attr(data-text) " " attr(data-text) " " attr(data-text);
   white-space: nowrap;
   animation: scroll 30s linear infinite;
 }
