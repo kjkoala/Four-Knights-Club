@@ -88,6 +88,8 @@ class Carousel {
 
     this.checkMedia();
 
+    this.updateButtons();
+
     if (this.enableOnMobile) {
       this.mediaQuery = window.matchMedia(
         `(max-width: ${this.mobileBreakpoint}px)`,
@@ -157,6 +159,35 @@ class Carousel {
     }
 
     this.updateDots();
+
+    this.updateButtons();
+  }
+
+  // ====================
+  // BUTTONS
+  // ====================
+
+  updateButtons() {
+    if (!this.prevBtn || !this.nextBtn) return;
+
+    // если loop включен — кнопки всегда активны
+    if (this.loop) {
+      this.prevBtn.disabled = false;
+      this.nextBtn.disabled = false;
+
+      return;
+    }
+
+    const maxIndex = Math.max(
+      0,
+      this.items.length - this.slidesToShow,
+    );
+
+    // начало
+    this.prevBtn.disabled = this.currentIndex <= 0;
+
+    // конец
+    this.nextBtn.disabled = this.currentIndex >= maxIndex;
   }
 
   next() {
@@ -280,13 +311,7 @@ class Carousel {
 
     this.startAutoplay();
 
-    if (this.prevBtn) {
-      this.prevBtn.disabled = false;
-    }
-
-    if (this.nextBtn) {
-      this.nextBtn.disabled = false;
-    }
+    this.updateButtons();
 
     if (this.dotsContainer) {
       this.dotsContainer.style.display = "";

@@ -92,7 +92,7 @@ button:disabled {
   right: 0;
   top: 50%;
 
-  border-top: 2px solid #F54932;
+  border-top: 2px solid #f54932;
 }
 
 .header2 {
@@ -188,7 +188,8 @@ button:disabled {
 }
 
 .track::after {
-  content: attr(data-text) " " attr(data-text) " " attr(data-text) " " attr(data-text);
+  content: attr(data-text) " " attr(data-text) " " attr(data-text) " "
+    attr(data-text);
   white-space: nowrap;
   animation: scroll 30s linear infinite;
 }
@@ -844,8 +845,6 @@ button:disabled {
   .wasicy_grid__item {
     padding: 0 20px;
     display: flex;
-    /* align-items: center; */
-    justify-content: center;
   }
 
   .button {
@@ -1071,5 +1070,18 @@ button:disabled {
   .header1 {
     word-spacing: 0px;
     letter-spacing: 6px;
+  }
+}
+
+@media screen and (width > 1920px) {
+  .header {
+    --vector-pos: 500px 260px;
+    --city-pos: 500px 270px;
+    --knight-pos: 1335px 483px;
+    --pawn-pos: 1739px 558px;
+    --king-pos: 1329px 271px;
+    --queen-pos: 1562px 166px;
+    --elipse-pos: 1173px -44px;
+    --circle-pos: 1114px -50px;
   }
 }
