@@ -437,9 +437,12 @@ button:disabled {
 
 .carousel-controllers__counter {
   font-family: "Golos Text", sans-serif;
-  opacity: 60%;
   min-width: 66px;
   text-align: center;
+}
+
+.carousel-controllers__total {
+  opacity: 60%;
 }
 
 .carousel-controllers._prev {
